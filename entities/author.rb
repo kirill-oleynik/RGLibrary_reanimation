@@ -7,10 +7,10 @@ class Author
       @name = @bio = nil
   end
   def valid?
-    name
-  end
-  def valid?
     return name_is_valid?
+  end
+  def to_s
+    name.to_s
   end
   private
   def name_is_valid?
