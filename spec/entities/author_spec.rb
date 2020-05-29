@@ -44,5 +44,19 @@ RSpec.describe Author do
         expect(author_without_bio.valid?).to eq(true)
       end
     end
+    describe '#to_s' do
+      context 'when author has name' do
+      let(:valid_author){ Author.new(name: 'name', bio: 'bio') }
+      it 'returns string of name' do
+        expect(valid_author.to_s).to eq('name')
+      end
+      end
+      context 'when author has no name' do
+      let(:empty_author){Author.new({})}
+      it 'returns empty string' do
+        expect(empty_author.to_s).to eq('')
+      end
+      end
+    end
   end
 end
