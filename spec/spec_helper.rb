@@ -1,5 +1,7 @@
+require 'coveralls'
 require 'pry'
 require 'faker'
+Coveralls.wear!
 %w[entities].map do |dir|
   Dir[File.join("./#{dir}/*.rb")].each { |f| require f }
 end
