@@ -1,9 +1,10 @@
 class Author
-  attr_accessor :name, :bio
+  attr_reader :name, :bio
+
   def initialize(args)
-    @name = args.fetch(:name, nil)
-    @bio = args.fetch(:bio, nil)
-    rescue NoMethodError
+    @name = args[:name]
+    @bio = args[:bio]
+    rescue TypeError
       @name = @bio = nil
   end
   def valid?
