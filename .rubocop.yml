@@ -1,0 +1,14 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'spec/spec_helper.rb'
+    - '.Gemfile'
+Style/NumericPredicate:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Style/ZeroLengthPredicate:
+  Enabled: false
+  Enabled: false
+Style/RedundantReturn:
+  Enabled: false
