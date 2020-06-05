@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'coveralls', require: false
+gem 'factory_bot', '~> 5.2'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'fasterer', '~> 0.8.3'
 gem 'pry', '~> 0.13.1'
