@@ -2,12 +2,10 @@
 
 # An author of a book
 class Author
-  attr_reader :name, :bio
-  def initialize(args)
+  attr_accessor :name, :bio
+  def initialize(args = {})
     @name = args[:name]
-    @bio = args[:bio]
-  rescue TypeError
-    @name = @bio = nil
+    @name = args[:bio]
   end
 
   def valid?
