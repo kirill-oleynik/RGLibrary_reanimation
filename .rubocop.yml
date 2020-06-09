@@ -12,3 +12,5 @@ Style/ZeroLengthPredicate:
   Enabled: false
 Style/RedundantReturn:
   Enabled: false
+Style/SafeNavigation:
+  Enabled: false
