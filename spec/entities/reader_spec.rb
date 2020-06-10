@@ -38,6 +38,20 @@ RSpec.describe Reader do
         end
       end
     end
+    describe '#to_s' do
+      context 'when name exists' do
+        let(:reader) { build(:kirilloleynik) }
+        it 'returns reader name' do
+          expect(reader.to_s).to eq('Kirill')
+        end
+      end
+      context 'when name is missing' do
+        let(:reader) { build(:reader) }
+        it 'returns nil' do
+          expect(reader.to_s).to eq(nil)
+        end
+      end
+    end
     describe '#address' do
       context 'when all address data exists and is valid' do
         let(:reader) { build(:kirilloleynik) }
