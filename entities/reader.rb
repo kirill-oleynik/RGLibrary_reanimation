@@ -23,6 +23,10 @@ class Reader
     ].all?
   end
 
+  def to_s
+    return name
+  end
+
   def address
     return address_data_valid? ? "#{@house}, #{@street} str., #{@city}" : nil
   end
