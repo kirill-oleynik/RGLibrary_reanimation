@@ -7,4 +7,8 @@ FactoryBot.define do
     factory.title { 'Clean Architecture' }
     factory.author { build :uncle_bob }
   end
+  factory :random_book, class: Book do |factory|
+    factory.title { Faker::Book.title }
+    factory.author { build(:random_author) }
+  end
 end
