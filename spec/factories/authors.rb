@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :author, class: Author do |factory|
   end
   factory :random_author, class: Author do |factory|
-    factory.name { Faker::Name.name }
+    factory.name { Faker::Book.author }
     factory.bio { Faker::Lorem.paragraph }
   end
   factory :uncle_bob, class: Author do |factory|
