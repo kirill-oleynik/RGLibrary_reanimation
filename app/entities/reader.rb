@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+require_relative 'helper_methods.rb'
 # Rader entity
 class Reader
+  include HelperMethods
   attr_reader :city
   attr_writer :name, :email, :city, :street, :house
 
@@ -58,7 +60,7 @@ class Reader
   end
 
   def name_valid?
-    return @name && @name&.is_a?(String) && @name.length > 0
+    return not_empty_string?(@name)
   end
 
   def email_valid?
@@ -66,14 +68,14 @@ class Reader
   end
 
   def city_valid?
-    return @city && @city&.is_a?(String) && @city.length > 0
+    return not_empty_string?(@city)
   end
 
   def street_valid?
-    return @street && @street&.is_a?(String) && @street.length > 0
+    return not_empty_string?(@street)
   end
 
   def house_valid?
-    return @house && @house.is_a?(Integer) && @house > 0
+    return positive_integer?(@house)
   end
 end
