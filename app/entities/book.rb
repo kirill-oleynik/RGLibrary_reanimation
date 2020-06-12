@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+require_relative 'helper_methods.rb'
 # Book entity
 class Book
+  include HelperMethods
   attr_accessor :title
   attr_writer :author
   def initialize(args = {})
@@ -24,7 +26,7 @@ class Book
   private
 
   def title_valid?
-    return @title.is_a?(String) && @title.length > 0
+    return not_empty_string?(@title)
   end
 
   def author_valid?
