@@ -29,6 +29,11 @@ class Reader
     return name
   end
 
+  def ==(other)
+    is_valid_reader = other.is_a?(Reader) && other.valid?
+    return is_valid_reader ? @name == other.name && @email == other.email : false
+  end
+
   def address
     return address_data_valid? ? "#{@house}, #{@street} str., #{@city}" : nil
   end
