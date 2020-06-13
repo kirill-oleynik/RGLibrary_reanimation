@@ -96,5 +96,36 @@ RSpec.describe Book do
         end
       end
     end
+    describe '#==' do
+      context 'when both title and author are the same' do
+        let(:book_1) { build(:clean_architecture) }
+        let(:book_2) { build(:clean_architecture) }
+        it 'returns true' do
+          # binding.pry
+          expect(book_1 == book_2).to eq(true)
+        end
+      end
+      context 'when only titles are equal' do
+        let(:book_1) { build(:random_book, title: 'title') }
+        let(:book_2) { build(:random_book, title: 'title') }
+        it 'returns false' do
+          expect(book_1 == book_2).to eq(false)
+        end
+      end
+      context 'when only authors are equal' do
+        let(:book_1) { build(:clean_architecture, title: 'Clean') }
+        let(:book_2) { build(:clean_architecture, title: 'Architecture') }
+        it 'returns false' do
+          expect(book_1 == book_2).to eq(false)
+        end
+      end
+      context 'when both title and authors are different' do
+        let(:book_1) { build(:random_book) }
+        let(:book_2) { build(:random_book) }
+        it 'returns false' do
+          expect(book_1 == book_2).to eq(false)
+        end
+      end
+    end
   end
 end

@@ -9,5 +9,6 @@ FactoryBot.define do
   end
   factory :uncle_bob, class: Author do |factory|
     factory.name { 'Robert C. Martin' }
+    factory.bio { 'Bio' }
   end
 end
