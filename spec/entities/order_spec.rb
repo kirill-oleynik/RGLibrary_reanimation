@@ -129,5 +129,42 @@ RSpec.describe Order do
         end
       end
     end
+    describe '#==' do
+      context 'when all attributes are equal' do
+        let(:order_1) { build(:developer_order) }
+        let(:order_2) { build(:developer_order) }
+        it 'returns true' do
+          expect(order_1 == order_2).to eq(true)
+        end
+      end
+      context 'when only books are equal' do
+        let(:order_1) { build(:developer_order, reader: build(:random_reader)) }
+        let(:order_2) { build(:developer_order, reader: build(:random_reader)) }
+        it 'returns false' do
+          expect(order_1 == order_2).to eq(false)
+        end
+      end
+      context 'when only readers are equal' do
+        let(:order_1) { build(:developer_order, book: build(:random_book)) }
+        let(:order_2) { build(:developer_order, book: build(:random_book)) }
+        it 'returns false' do
+          expect(order_1 == order_2).to eq(false)
+        end
+      end
+      context 'when only dates are equal' do
+        let(:order_1) { build(:developer_order, reader: build(:random_reader), book: build(:random_book)) }
+        let(:order_2) { build(:developer_order, reader: build(:random_reader), book: build(:random_book)) }
+        it 'returns false' do
+          expect(order_1 == order_2).to eq(false)
+        end
+      end
+      context 'when all attributes are different' do
+        let(:order_1) { build(:random_order) }
+        let(:order_2) { build(:random_order) }
+        it 'returns false' do
+          expect(order_1 == order_2).to eq(false)
+        end
+      end
+    end
   end
 end
