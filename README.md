@@ -71,3 +71,17 @@ Ideally, the project has zero number of error/warnings after lintering.
 + Intentations and “pretty” view of a code
 + Project must have Pull Request on Git repository opened.
 + All branches/commits/modules/classes/methods/variables/files should be named correctly
+
+# Notes
+
+## Linter rules description
+
++ you may be surprised that some rules are disabled
++ (which may contradict the generally accepted ruby styleguide).
+ + have the reasons described below:
+
++ + Style/NumericPredicate - **Explicit is better than implicit**.
++ + Style/ZeroLengthPredicate - **Explicit is better than implicit**.
++ + Metrics/BlockLength - *Disabled for specs* - **Complex is better than complicated**.
++ + Style/RedundantReturn - **Explicit is better than implicit**
++ + Style/SafeNavigation- **Complex is better than complicated**.
