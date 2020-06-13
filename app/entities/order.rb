@@ -31,6 +31,11 @@ class Order
     return @date.is_a?(Date) ? @date.strftime('%d-%m-%Y') : nil
   end
 
+  def ==(other)
+    is_valid_order = other.is_a?(Order) && other.valid?
+    return is_valid_order ? book == other.book && reader == other.reader && date == other.date : false
+  end
+
   private
 
   def book_valid?
