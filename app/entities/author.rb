@@ -18,6 +18,11 @@ class Author
     @name.to_s
   end
 
+  def ==(other)
+    is_valid_author = other.is_a?(Author) && other.valid?
+    return is_valid_author ? @name == other.name && @bio == other.bio : false
+  end
+
   private
 
   def name_is_valid?
