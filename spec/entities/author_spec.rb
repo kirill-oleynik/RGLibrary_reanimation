@@ -69,5 +69,35 @@ RSpec.describe Author do
         end
       end
     end
+    describe '#==' do
+      context 'when authors names and bios are the same' do
+        let(:author_1) { build(:uncle_bob) }
+        let(:author_2) { build(:uncle_bob) }
+        it 'returns true' do
+          expect(author_1 == author_2).to eq(true)
+        end
+      end
+      context 'when authors names are different' do
+        let(:author_1) { build(:author, name: 'name_1') }
+        let(:author_2) { build(:author, name: 'name_2') }
+        it 'returns false' do
+          expect(author_1 == author_2).to eq(false)
+        end
+      end
+      context 'when authors bios are different' do
+        let(:author_1) { build(:author, bio: 'bio_1') }
+        let(:author_2) { build(:author, bio: 'bio_1') }
+        it 'returns false' do
+          expect(author_1 == author_2).to eq(false)
+        end
+      end
+      context 'when authors both name and bio are different' do
+        let(:author_1) { build(:author, name: 'name_1', bio: 'bio_1') }
+        let(:author_2) { build(:author, name: 'name_2', bio: 'bio_2') }
+        it 'returns false' do
+          expect(author_1 == author_2).to eq(false)
+        end
+      end
+    end
   end
 end
