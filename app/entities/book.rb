@@ -23,6 +23,11 @@ class Book
     return title_valid? && author_valid?
   end
 
+  def ==(other)
+    is_valid_book = other.is_a?(Book) && other.valid?
+    return is_valid_book ? @title == other.title && author == other.author : false
+  end
+
   private
 
   def title_valid?
