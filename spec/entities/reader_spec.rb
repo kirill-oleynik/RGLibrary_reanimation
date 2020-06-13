@@ -169,5 +169,35 @@ RSpec.describe Reader do
         end
       end
     end
+    describe '#==' do
+      context 'when name and email are equal' do
+        let(:reader_1) { build(:kirilloleynik) }
+        let(:reader_2) { build(:kirilloleynik) }
+        it 'returns true' do
+          expect(reader_1 == reader_2).to eq(true)
+        end
+      end
+      context 'when only names are equal' do
+        let(:reader_1) { build(:kirilloleynik, email: Faker::Internet.email) }
+        let(:reader_2) { build(:kirilloleynik, email: Faker::Internet.email) }
+        it 'returns false' do
+          expect(reader_1 == reader_2).to eq(false)
+        end
+      end
+      context 'when only emails are equal' do
+        let(:reader_1) { build(:kirilloleynik, name: Faker::Name.name) }
+        let(:reader_2) { build(:kirilloleynik, name: Faker::Name.name) }
+        it 'returns false' do
+          expect(reader_1 == reader_2).to eq(false)
+        end
+      end
+      context 'when both name and email are different' do
+        let(:reader_1) { build(:random_reader) }
+        let(:reader_2) { build(:random_reader) }
+        it 'returns false' do
+          expect(reader_1 == reader_2).to eq(false)
+        end
+      end
+    end
   end
 end
