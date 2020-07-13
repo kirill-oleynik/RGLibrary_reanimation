@@ -1,4 +1,5 @@
 # Technical specification [![Coverage Status](https://coveralls.io/repos/github/kirill-oleynik/RGLibrary_reanimation/badge.svg?branch=master)](https://coveralls.io/github/kirill-oleynik/RGLibrary_reanimation?branch=develop)
+[![CircleCI](https://circleci.com/gh/kirill-oleynik/RGLibrary_reanimation/tree/develop?style=svg&circle-token=8954e7081725b26b7279052291b7445c944f3fa5)](CircleCI)
 ## **Task**: Library
 **General info**: The task is to create an application that'll help us manage the basic needs of our Library.
 The library contains the next entities: Authors, Books, Readers, and Orders.
