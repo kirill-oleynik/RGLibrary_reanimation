@@ -7,7 +7,7 @@ class Author
   attr_accessor :name, :bio
   def initialize(args = {})
     @name = args[:name]
-    @name = args[:bio]
+    @bio = args[:bio]
   end
 
   def valid?
