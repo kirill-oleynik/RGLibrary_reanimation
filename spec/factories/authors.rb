@@ -11,4 +11,13 @@ FactoryBot.define do
     factory.name { 'Robert C. Martin' }
     factory.bio { 'Bio' }
   end
+  factory :kyle_dimpson, class: Author do |factory|
+    factory.name { 'Kyls Simpson' }
+    factory.bio { 'Bio' }
+  end
+  factory :guido_van_rossum, class: Author do |factory|
+    factory.name { 'Guido van Rossum' }
+    factory.bio { 'Bio' }
+  end
 end
+# end
